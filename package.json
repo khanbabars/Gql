@@ -1,0 +1,40 @@
+{
+  "name": "frontend-layer",
+  "version": "1.0.0",
+  "description": "server",
+  "main": "index.js",
+  "scripts": {
+    "debug": "cross-env NODE_ENV=development nodemon --inspect --exec babel-node ./src/server.js",
+    "start": "cross-env NODE_ENV=production nodemon --exec babel-node ./src/server.js",
+    "clean": "rmdir /s /q build && mkdir build",
+    "build": "npm run clean && npx babel src --out-dir build --plugins=@babel/proposal-class-properties,@babel/transform-modules-amd",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "apollo-server": "^2.4.8",
+    "apollo-server-express": "^2.4.8",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "gql": "^1.1.2",
+    "graphql": "^14.2.1",
+    "graphql-tools": "^4.0.4",
+    "http": "0.0.0",
+    "mongoose": "^5.5.2",
+    "react-bootstrap-sidebar": "0.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "apollo-tracing": "^0.8.1",
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.18.11"
+  }
+}
